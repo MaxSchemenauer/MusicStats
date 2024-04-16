@@ -62,7 +62,7 @@ def print_info(song_index):
 print_info(6236)
 
 
-def similar_song(song_index):
+def similar_song(song_index, num_similar):
     num_songs = len(track_id)
     similarity_scores = num_songs * [0]
 
@@ -72,63 +72,62 @@ def similar_song(song_index):
 
         ''' track_id '''
         this_id = track_id[song_index]
-        temp_id = track_id[i]
+        other_id = track_id[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' track_name '''
         this_name = track_name[song_index]
-        temp_name = track_name[i]
+        other_name = track_name[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' track_artist '''
         this_artist = track_artist[song_index]
-        temp_artist = track_artist[i]
+        other_artist = track_artist[i]
 
-        # TODO: Create method for adjusting similarity score
-        similarity_scores[i] += 5 if this_artist == temp_artist else 0
+        similarity_scores[i] += 5 if this_artist == other_artist else 0
 
         ''' track_popularity '''
         this_popularity = track_popularity[song_index]
-        temp_popularity = track_popularity[i]
+        other_popularity = track_popularity[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         '''track_album_id '''
         this_album_id = track_album_id[song_index]
-        temp_album_id = track_album_id[i]
+        other_album_id = track_album_id[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' track_album_name '''
         this_album_name = track_album_name[song_index]
-        temp_album_name = track_album_name[i]
+        other_album_name = track_album_name[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' track_album_release_date '''
         this_album_release_date = track_album_release_date[song_index]
-        temp_album_release_date = track_album_release_date[i]
+        other_album_release_date = track_album_release_date[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' playlist_name '''
         this_playlist_name = playlist_name[song_index]
-        temp_playlist_name = playlist_name[i]
+        other_playlist_name = playlist_name[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' playlist_id '''
         this_playlist_id = playlist_id[song_index]
-        temp_playlist_id = playlist_id[i]
+        other_playlist_id = playlist_id[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
@@ -136,98 +135,96 @@ def similar_song(song_index):
         ''' playlist_genre '''
 
         this_playlist_genre = playlist_genre[song_index]
-        temp_playlist_genre = playlist_genre[i]
+        other_playlist_genre = playlist_genre[i]
 
-        # TODO: Create method for adjusting similarity score
-        similarity_scores[i] += 2 if this_playlist_genre == temp_playlist_genre else 0
+        similarity_scores[i] += 2 if this_playlist_genre == other_playlist_genre else 0
 
         ''' playlist_subgenre '''
         this_playlist_subgenre = playlist_subgenre[song_index]
-        temp_playlist_subgenre = playlist_subgenre[i]
+        other_playlist_subgenre = playlist_subgenre[i]
 
-        # TODO: Create method for adjusting similarity score
-        similarity_scores[i] += 1 if this_playlist_subgenre == temp_playlist_subgenre else 0
+        similarity_scores[i] += .5 if this_playlist_subgenre == other_playlist_subgenre else 0
 
         ''' danceability '''
         this_danceability = danceability[song_index]
-        temp_danceability = danceability[i]
+        other_danceability = danceability[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' energy '''
         this_energy = energy[song_index]
-        temp_energy = energy[i]
+        other_energy = energy[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' key '''
         this_key = key[song_index]
-        temp_key = key[i]
+        other_key = key[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' loudness '''
         this_loudness = loudness[song_index]
-        temp_loudness = loudness[i]
+        other_loudness = loudness[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' mode '''
         this_mode = mode[song_index]
-        temp_mode = mode[i]
+        other_mode = mode[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' speechiness '''
         this_speechiness = speechiness[song_index]
-        temp_speechiness = speechiness[i]
+        other_speechiness = speechiness[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' acousticness '''
         this_acousticness = acousticness[song_index]
-        temp_acousticness = acousticness[i]
+        other_acousticness = acousticness[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' instrumentalness '''
         this_instrumentalness = instrumentalness[song_index]
-        temp_instrumentalness = instrumentalness[i]
+        other_instrumentalness = instrumentalness[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' liveliness '''
         this_liveness = liveness[song_index]
-        temp_liveness = liveness[i]
+        other_liveness = liveness[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' valence '''
         this_valence = valence[song_index]
-        temp_valence = valence[i]
+        other_valence = valence[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' tempo '''
         this_tempo = tempo[song_index]
-        temp_tempo = tempo[i]
+        other_tempo = tempo[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
         ''' duration_ms '''
         this_duration_ms = duration_ms[song_index]
-        temp_duration_ms = duration_ms[i]
+        other_duration_ms = duration_ms[i]
 
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
@@ -243,14 +240,14 @@ def similar_song(song_index):
 
     print("sorted_similarity_scores:", sorted_similarity_scores[:10])
     print("similar_tracks:")
-    for i in range(15):
+    for i in range(num_similar):
         print(sorted_similarity_scores[i], similar_tracks[i])
 
     return similarity_scores
 
 
 start_time = time.time()
-similarity_scores = similar_song(6236)
+similarity_scores = similar_song(6236, 50)
 end_time = time.time()
 elapsed_time = end_time - start_time
 print("Scanned all arrays in:", elapsed_time, "seconds")
