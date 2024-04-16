@@ -89,7 +89,7 @@ def similar_song(song_index):
         temp_artist = track_artist[i]
 
         # TODO: Create method for adjusting similarity score
-        similarity_scores[i] += 0
+        similarity_scores[i] += 5 if this_artist == temp_artist else 0
 
         ''' track_popularity '''
         this_popularity = track_popularity[song_index]
@@ -139,14 +139,14 @@ def similar_song(song_index):
         temp_playlist_genre = playlist_genre[i]
 
         # TODO: Create method for adjusting similarity score
-        similarity_scores[i] += 0
+        similarity_scores[i] += 2 if this_playlist_genre == temp_playlist_genre else 0
 
         ''' playlist_subgenre '''
         this_playlist_subgenre = playlist_subgenre[song_index]
         temp_playlist_subgenre = playlist_subgenre[i]
 
         # TODO: Create method for adjusting similarity score
-        similarity_scores[i] += 0
+        similarity_scores[i] += 1 if this_playlist_subgenre == temp_playlist_subgenre else 0
 
         ''' danceability '''
         this_danceability = danceability[song_index]
@@ -232,9 +232,25 @@ def similar_song(song_index):
         # TODO: Create method for adjusting similarity score
         similarity_scores[i] += 0
 
+    # Zip the arrays together
+    zipped_arrays = zip(similarity_scores, track_name)
+
+    # Sort the zipped array based on the values of similarity_scores in descending order
+    sorted_zipped_arrays = sorted(zipped_arrays, key=lambda x: x[0], reverse=True)
+
+    # Unzip the sorted array
+    sorted_similarity_scores, similar_tracks = zip(*sorted_zipped_arrays)
+
+    print("sorted_similarity_scores:", sorted_similarity_scores[:10])
+    print("similar_tracks:")
+    for i in range(15):
+        print(sorted_similarity_scores[i], similar_tracks[i])
+
+    return similarity_scores
+
 
 start_time = time.time()
-similar_song(6236)
+similarity_scores = similar_song(6236)
 end_time = time.time()
 elapsed_time = end_time - start_time
 print("Scanned all arrays in:", elapsed_time, "seconds")
